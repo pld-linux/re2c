@@ -1,10 +1,5 @@
-#
-# Conditional build:
-#%%bcond_with	tests		# build with tests
-%bcond_without	tests		# build without tests
-#
-Summary:	-
-Summary(pl.UTF-8):	-
+Summary:	re2c - a tool for writing very fast and very flexible scanners
+#Summary(pl.UTF-8):	-
 Name:		re2c
 Version:	0.12.0
 Release:	1
@@ -13,22 +8,22 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	68d6d1faf26179a7fe1f2d348cf90ac8
 URL:		http://re2c.org/
-#BuildRequires:	-
+BuildRequires:	libstdc++-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
-#Requires(postun):	-
-#Requires(pre,post):	-
-#Requires(preun):	-
-#Requires:	-
-#Provides:	-
-#Provides:	group(foo)
-#Provides:	user(foo)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+re2c is a tool for writing very fast and very flexible scanners. Unlike
+any other such tool, re2c focuses on generating high efficient code
+for regular expression matching. As a result this allows a much broader
+range of use than any traditional lexer offers. And Last but not least
+re2c generates warning free code that is equal to hand-written code
+in terms of size, speed and quality.
 
-%description -l pl.UTF-8
+#%description -l pl.UTF-8
+# TODO
 
 %prep
 %setup -q
