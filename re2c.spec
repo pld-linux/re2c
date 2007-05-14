@@ -1,29 +1,35 @@
 Summary:	re2c - a tool for writing very fast and very flexible scanners
-#Summary(pl.UTF-8):	-
+Summary(pl.UTF-8):	re2c - narzędzie do pisania bardzo szybkich i elastycznych skanerów
 Name:		re2c
 Version:	0.12.0
 Release:	1
 License:	Public Domain
 Group:		Applications
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/re2c/%{name}-%{version}.tar.gz
 # Source0-md5:	68d6d1faf26179a7fe1f2d348cf90ac8
 URL:		http://re2c.org/
-BuildRequires:	libstdc++-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-re2c is a tool for writing very fast and very flexible scanners. Unlike
-any other such tool, re2c focuses on generating high efficient code
-for regular expression matching. As a result this allows a much broader
-range of use than any traditional lexer offers. And Last but not least
-re2c generates warning free code that is equal to hand-written code
-in terms of size, speed and quality.
+re2c is a tool for writing very fast and very flexible scanners.
+Unlike any other such tool, re2c focuses on generating high efficient
+code for regular expression matching. As a result this allows a much
+broader range of use than any traditional lexer offers. And last but
+not least re2c generates warning free code that is equal to
+hand-written code in terms of size, speed and quality.
 
-#%description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+re2c to narzędzie do pisania bardzo szybkich i bardzo elastycznych
+skanerów. W przeciwieństwie do innych podobnych narzędzi re2c skupia
+się na bardzo wydajnym kodzie do dopasowywania wyrażeń regularnych. W
+efekcie pozwala to na dużo szerszy zakres zastosowań niż oferują
+tradycyjne leksery. I wreszcie re2c generuje kod wolny od ostrzeżeń,
+równoważny kodowi pisanemu ręcznie pod kątem rozmiaru, szybkości i
+jakości.
 
 %prep
 %setup -q
