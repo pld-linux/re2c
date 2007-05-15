@@ -8,10 +8,9 @@ Group:		Applications
 Source0:	http://dl.sourceforge.net/re2c/%{name}-%{version}.tar.gz
 # Source0-md5:	68d6d1faf26179a7fe1f2d348cf90ac8
 URL:		http://re2c.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
-BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,11 +34,10 @@ jakości.
 %setup -q
 
 %build
-#%%{__gettextize}
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
