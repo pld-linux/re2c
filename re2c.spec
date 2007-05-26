@@ -1,12 +1,12 @@
 Summary:	re2c - a tool for writing very fast and very flexible scanners
 Summary(pl.UTF-8):	re2c - narzędzie do pisania bardzo szybkich i elastycznych skanerów
 Name:		re2c
-Version:	0.12.0
+Version:	0.12.1
 Release:	1
 License:	Public Domain
 Group:		Applications
 Source0:	http://dl.sourceforge.net/re2c/%{name}-%{version}.tar.gz
-# Source0-md5:	68d6d1faf26179a7fe1f2d348cf90ac8
+# Source0-md5:	6ac50ad6412e90b38d499a28df42af68
 URL:		http://re2c.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
