@@ -4,7 +4,7 @@ Name:		re2c
 Version:	0.13.5
 Release:	1
 License:	Public Domain
-Group:		Applications
+Group:		Applications/Text
 Source0:	http://dl.sourceforge.net/re2c/%{name}-%{version}.tar.gz
 # Source0-md5:	4a97d8f77ed6d2c76c8bd840a43f5633
 URL:		http://re2c.org/
