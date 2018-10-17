@@ -5,11 +5,12 @@ Version:	1.1.1
 Release:	1
 License:	Public Domain
 Group:		Applications/Text
-Source0:	https://github.com/skvadrik/re2c/releases/download/1.1.1/%{name}-%{version}.tar.gz
+#Source0Download: https://github.com/skvadrik/re2c/releases
+Source0:	https://github.com/skvadrik/re2c/releases/download/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	7355fde733bd76cbc480cda10ef49e46
 URL:		http://re2c.org/
 BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGELOG README doc/* examples
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%attr(755,root,root) %{_bindir}/re2c
+%{_mandir}/man1/re2c.1*
