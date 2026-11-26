@@ -39,6 +39,8 @@ jakości.
 %setup -q
 
 %build
+# configure.ac overrides --enable-java with test -n "$JAVA_HOME", which drops re2java
+JAVA_HOME=%{_prefix} \
 %configure
 %{__make}
 
