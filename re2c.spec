@@ -1,17 +1,19 @@
+# Conditional build:
+%bcond_without	tests	# unit tests
+
 Summary:	re2c - a tool for writing very fast and very flexible scanners
 Summary(pl.UTF-8):	re2c - narzędzie do pisania bardzo szybkich i elastycznych skanerów
 Name:		re2c
-Version:	1.2
-Release:	2
+Version:	4.6
+Release:	1
 License:	Public Domain
 Group:		Applications/Text
 #Source0Download: https://github.com/skvadrik/re2c/releases
 Source0:	https://github.com/skvadrik/re2c/releases/download/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	478d6c2ae58fd6e49520fad48c3d60c4
+# Source0-md5:	4bee1f1531980bd06cc325c174577210
 URL:		http://re2c.org/
-BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake >= 1:1.11
 BuildRequires:	libstdc++-devel
+%{?with_tests:BuildRequires:	python3}
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,12 +39,12 @@ jakości.
 %setup -q
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
 %configure
 %{__make}
+
+%if %{with tests}
+%{__make} check
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -55,6 +57,29 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG NO_WARRANTY README.md doc/* examples
+%doc CHANGELOG NO_WARRANTY README.md examples
 %attr(755,root,root) %{_bindir}/re2c
+%attr(755,root,root) %{_bindir}/re2d
+%attr(755,root,root) %{_bindir}/re2go
+%attr(755,root,root) %{_bindir}/re2hs
+%attr(755,root,root) %{_bindir}/re2java
+%attr(755,root,root) %{_bindir}/re2js
+%attr(755,root,root) %{_bindir}/re2ocaml
+%attr(755,root,root) %{_bindir}/re2py
+%attr(755,root,root) %{_bindir}/re2rust
+%attr(755,root,root) %{_bindir}/re2swift
+%attr(755,root,root) %{_bindir}/re2v
+%attr(755,root,root) %{_bindir}/re2zig
+%{_datadir}/re2c
 %{_mandir}/man1/re2c.1*
+%{_mandir}/man1/re2d.1*
+%{_mandir}/man1/re2go.1*
+%{_mandir}/man1/re2hs.1*
+%{_mandir}/man1/re2java.1*
+%{_mandir}/man1/re2js.1*
+%{_mandir}/man1/re2ocaml.1*
+%{_mandir}/man1/re2py.1*
+%{_mandir}/man1/re2rust.1*
+%{_mandir}/man1/re2swift.1*
+%{_mandir}/man1/re2v.1*
+%{_mandir}/man1/re2zig.1*
